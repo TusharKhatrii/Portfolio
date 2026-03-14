@@ -36,6 +36,16 @@ body {
   background: var(--color-electric-cyan);
 }
 
+* {
+  cursor: none !important;
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+}
+
 ::selection {
   background: var(--color-electric-cyan);
   color: var(--color-space-black);

@@ -8,7 +8,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <main className="relative min-h-screen bg-space-black text-white selection:bg-electric-cyan selection:text-space-black">
+    <main className="relative min-h-screen text-white selection:bg-electric-cyan selection:text-space-black z-10">
       <AnimatePresence mode="wait">
         {loading && (
           <LoadingScreen

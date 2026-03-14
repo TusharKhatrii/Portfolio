@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { BackgroundCanvas } from "@/components/3d/BackgroundCanvas";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,8 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${geistMono.variable} antialiased bg-space-black text-white font-sans selection:bg-electric-cyan selection:text-space-black`}
+        className={`${inter.variable} ${geistMono.variable} antialiased bg-space-black text-white font-sans selection:bg-electric-cyan selection:text-space-black cursor-none`}
       >
+        <CustomCursor />
+        <BackgroundCanvas />
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
