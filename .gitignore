@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore all PDF files (very common for generated documents, reports, slides…)
+*.pdf

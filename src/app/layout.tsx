@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "[YOUR FULL NAME] - 3D Portfolio",
-  description: "Futuristic 3D Portfolio built with Next.js and React Three Fiber",
+  title: "Tushar Khatri",
+  description: "Portfolio built with Next.js and React Three Fiber",
 };
 
 export default function RootLayout({

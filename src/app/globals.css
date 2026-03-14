@@ -40,3 +40,12 @@ body {
   background: var(--color-electric-cyan);
   color: var(--color-space-black);
 }
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@utility animate-scan {
+  animation: scanline 8s linear infinite;
+}
