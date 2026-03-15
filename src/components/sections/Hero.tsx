@@ -7,6 +7,7 @@ import { Canvas } from "@react-three/fiber";
 import { Preload } from "@react-three/drei";
 import Typewriter from "typewriter-effect";
 import { VT323 } from "next/font/google";
+import { ChevronDown } from "lucide-react";
 
 const pixelFont = VT323({
   weight: "400",
@@ -16,7 +17,7 @@ const pixelFont = VT323({
 export function Hero() {
 
   return (
-    <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full h-screen flex flex-col items-center justify-center">
       {/* 3D Scene Container - Full Background */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none md:pointer-events-auto opacity-40 md:opacity-100">
         <div className="w-full h-full">
@@ -53,26 +54,21 @@ export function Hero() {
           />
         </div>
 
+        {/* Animated Scroll Down Indicator */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="flex flex-wrap gap-6 justify-center"
+          transition={{ delay: 2, duration: 1 }}
+          className="flex flex-col items-center justify-center mt-12 gap-2"
         >
-          <button className="px-10 py-4 bg-transparent border border-gray-700 text-white font-mono text-sm uppercase tracking-widest hover:border-electric-cyan hover:text-electric-cyan transition-all duration-300 backdrop-blur-sm relative group overflow-hidden">
-            <span className="relative z-10 block mix-blend-difference text-white">View Work</span>
-            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out z-0"></div>
-          </button>
-        </motion.div>
-
-        {/* Minimal Scroll Indicator centered at bottom */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-4"
-        >
-          <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-gray-500 to-transparent animate-pulse"></div>
+          <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">Scroll to Explore</span>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="text-electric-cyan"
+          >
+            <ChevronDown size={32} className="drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] opacity-80" />
+          </motion.div>
         </motion.div>
       </div>
     </section>
