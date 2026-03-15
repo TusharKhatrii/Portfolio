@@ -6,7 +6,7 @@ export const resumeData = {
     linkedin: "https://www.linkedin.com/in/khatriitushar/",
     github: "https://github.com/TusharKhatrii/",
     Leetcode: "https://leetcode.com/u/Tushar_Khatri05/",
-    role: "Software Engineer & Backend • API • Cloud (AWS)"
+    role: "Software Engineer & Backend • API • Cloud (AWS) & Node.js • Express.js & Relational • Non-Relational Databases"
   },
   summary: "Computer Science student with a strong focus on engineering principles and system scalability. Highly adaptable to new technologies, viewing languages and frameworks as interchangeable tools to solve complex problems. Demonstrated success in building data-intensive applications, with a commitment to continuous learning and writing clean, maintainable code regardless of the stack.",
   education: [
@@ -18,8 +18,8 @@ export const resumeData = {
     }
   ],
   skills: {
-    languages: ["C/C++", "JavaScript", "Python", "Dart", "Java"],
-    frameworks: ["Node.js", "Express.js", "Flutter", "LeafletJS", "BcryptJS", "JWT", "React.js", "Next.js", "Three.js", "Tailwind CSS"],
+    languages: ["C/C++", "TypeScript", "JavaScript", "Python", "Dart", "Java"],
+    frameworks: ["Node.js", "Express.js", "Flutter"],
     databases: ["PostgreSQL (PostGIS)", "MySQL", "Supabase"],
     frontend: ["HTML5", "CSS3", "Bootstrap", "Handlebars (HBS)", "EJS"],
     cloudAndDeployment: ["Vercel", "AWS (VPC, EC2, Load Balancer, Auto Scaling)"],

@@ -25,9 +25,9 @@ export function About() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center py-32 px-6 sm:px-12 md:px-24 z-10" id="about">
       <div className="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
+
         {/* Left Side: Terminal Style About Text */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-7 flex flex-col justify-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export function About() {
         >
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter">
-              ABOUT<span className="text-electric-cyan">_ME</span>
+              ABOUT<span className="text-electric-cyan"> ME</span>
             </h2>
             <div className="h-[2px] w-full bg-gradient-to-r from-electric-cyan to-transparent flex-1" />
           </div>
@@ -57,7 +57,7 @@ export function About() {
 
             {/* Terminal Body */}
             <div className="bg-[#0f0f0f] border border-[#333] rounded-b-lg p-6 md:p-8 font-mono relative overflow-hidden group-hover:border-electric-cyan/50 transition-colors duration-500 shadow-2xl">
-              
+
               {/* Scanline Effect Overlay */}
               <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.03)_50%,rgba(255,255,255,0))] bg-[length:100%_4px] pointer-events-none opacity-20"></div>
 
@@ -67,21 +67,21 @@ export function About() {
                 </p>
                 <div className="text-gray-400 mt-4 leading-loose">
                   {resumeData.summary.split(". ").map((sentence, idx, arr) => {
-                     if (idx === arr.length - 1 && sentence === "") return null;
-                     const text = sentence.endsWith(".") ? sentence : sentence + ".";
-                     return (
-                        <motion.span 
-                          key={idx}
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: idx * 0.4 }}
-                          className="block mb-2"
-                        >
-                          <span className="text-electric-cyan opacity-50 mr-2">{">"}</span> 
-                          {text}
-                        </motion.span>
-                     );
+                    if (idx === arr.length - 1 && sentence === "") return null;
+                    const text = sentence.endsWith(".") ? sentence : sentence + ".";
+                    return (
+                      <motion.span
+                        key={idx}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: idx * 0.4 }}
+                        className="block mb-2"
+                      >
+                        <span className="text-electric-cyan opacity-50 mr-2">{">"}</span>
+                        {text}
+                      </motion.span>
+                    );
                   })}
                 </div>
               </div>
@@ -90,7 +90,7 @@ export function About() {
         </motion.div>
 
         {/* Right Side: Data/Contact UI */}
-        <motion.div 
+        <motion.div
           className="lg:col-span-5 flex flex-col gap-6"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -115,7 +115,7 @@ export function About() {
           <div className="p-[1px] bg-gradient-to-b from-neon-purple/40 to-transparent rounded-xl hover:from-neon-purple/70 transition-colors duration-500">
             <div className="bg-[#0a0a0a] p-6 rounded-xl flex flex-col gap-4 shadow-[0_0_15px_rgba(176,38,255,0.05)]">
               <span className="text-gray-500 font-mono text-xs uppercase tracking-widest">Connect</span>
-              
+
               {/* Email Row */}
               <div className="flex items-center justify-between bg-[#141414] border border-[#222] p-3 rounded-lg hover:border-electric-cyan transition-colors group cursor-pointer" onClick={handleCopyEmail}>
                 <div className="flex items-center gap-3 overflow-hidden">
@@ -124,7 +124,7 @@ export function About() {
                     {resumeData.personal.email.replace("mailto:", "")}
                   </span>
                 </div>
-                <button 
+                <button
                   className="text-gray-400 group-hover:text-electric-cyan transition-colors p-2 flex items-center gap-2 shrink-0 ml-2"
                   title="Copy Email"
                 >

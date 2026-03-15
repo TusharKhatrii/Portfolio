@@ -7,7 +7,6 @@ import { Canvas } from "@react-three/fiber";
 import { Preload } from "@react-three/drei";
 import Typewriter from "typewriter-effect";
 import { VT323 } from "next/font/google";
-import { ChevronDown } from "lucide-react";
 
 const pixelFont = VT323({
   weight: "400",
@@ -54,23 +53,33 @@ export function Hero() {
           />
         </div>
 
-        {/* Animated Scroll Down Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="flex flex-col items-center justify-center mt-12 gap-2"
-        >
-          <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">Scroll to Explore</span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="text-electric-cyan"
-          >
-            <ChevronDown size={32} className="drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] opacity-80" />
-          </motion.div>
-        </motion.div>
       </div>
+
+      {/* Animated Mouse Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1.5 }}
+        className="absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center cursor-pointer z-20"
+        onClick={() => {
+          document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        <motion.div 
+          animate={{
+            y: [0, 15, 0],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="w-[34px] h-[54px] rounded-[30px] border-[2px] border-slate-500/60 flex justify-center pt-2"
+        >
+          {/* Static Inner Wheel */}
+          <div className="w-1.5 h-3.5 rounded-full bg-slate-400/80" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
