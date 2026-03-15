@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
 import { useState, useEffect } from "react";
-import { Copy, Terminal, Github, Linkedin, Mail, Smartphone } from "lucide-react";
+import { Copy, Terminal, Github, Linkedin, Mail, Phone } from "lucide-react";
 
 export function About() {
   const [copied, setCopied] = useState(false);
@@ -134,7 +134,7 @@ export function About() {
 
               {/* Phone Row */}
               <div className="flex items-center gap-3 bg-[#141414] border border-[#222] p-3 rounded-lg hover:border-electric-cyan transition-colors group text-gray-300 hover:text-white">
-                <Smartphone size={16} className="text-gray-400 group-hover:text-electric-cyan shrink-0" />
+                <Phone size={16} className="text-gray-400 group-hover:text-electric-cyan shrink-0" />
                 <span className="font-mono text-sm truncate">
                   {resumeData.personal.phone}
                 </span>
