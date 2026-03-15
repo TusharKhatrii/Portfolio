@@ -63,7 +63,7 @@ const allSkills = [
 
 export function Skills() {
   return (
-    <section className="relative w-full min-h-screen py-32 px-6 sm:px-12 md:px-24 z-10 flex flex-col items-center justify-center bg-[#050505]" id="skills">
+    <section className="relative w-full min-h-screen py-32 px-6 sm:px-12 md:px-24 z-10 flex flex-col items-center justify-center" id="skills">
       <div className="max-w-6xl w-full mx-auto flex flex-col items-center">
         
         {/* Header */}
