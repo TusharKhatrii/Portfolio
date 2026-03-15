@@ -85,16 +85,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🌐 Deployment
-
-This project can be deployed to any of the following:
-
-- **Vercel** — `vercel deploy` (recommended for Next.js)
-- **Netlify** — static export via `next.config.ts` with `output: 'export'`
-- **GitHub Pages** — static export with base path configuration
-
----
-
 ## 📄 License
 
 MIT — feel free to use this as inspiration for your own portfolio.
