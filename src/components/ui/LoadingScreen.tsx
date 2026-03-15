@@ -15,7 +15,6 @@ const LINES: TerminalLine[] = [
   { text: "⠧ resolving packages...",                         color: "text-electric-cyan" },
   { text: "+ next@14 framer-motion@11 @react-three/fiber@8", color: "text-green-400" },
   { text: "+ tailwindcss@3.4 react-icons@5 lenis@1",         color: "text-green-400" },
-  { text: "✓ 1,024 packages installed in 1s",               color: "text-green-400" },
   { text: "",                                                 color: "",                   empty: true },
   { text: "Launching Portfolio...",                          color: "text-neon-purple" },
 ];
