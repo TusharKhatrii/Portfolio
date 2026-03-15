@@ -12,9 +12,37 @@ export const resumeData = {
   education: [
     {
       institution: "FAST National University of Computer and Emerging Sciences (NUCES)",
+      shortInstitution: "FAST NUCES, Karachi, Pakistan",
       location: "Karachi, Sindh",
       degree: "Bachelor of Science in Computer Science",
+      field: "Computer Science",
+      period: "08.2022 — 06.2026",
       graduation: "Expected Graduation: June 2026",
+      description: "Pursuing BSc in Computer Science with a strong focus on systems, algorithms, and software engineering. Relevant coursework includes Data Structures & Algorithms, Operating Systems, Databases, Computer Networks, Software Engineering, Machine Learning, and Cloud Computing.",
+      highlights: [
+        "Designed and delivered team projects building APIs, data pipelines, and cloud-deployed services.",
+        "Focused on backend architecture, scalable services, and production readiness: testing, CI/CD, and monitoring.",
+        "Active in programming competitions and departmental tech initiatives.",
+      ],
+      achievements: [
+        "Programming Competition Participant",
+        "Capstone & Team Projects in Web/ML systems",
+        "Active Member of Computer Science Society",
+      ],
+      flag: true
+    },
+    {
+      institution: "Sindh Academy, Umerkot",
+      shortInstitution: "Sindh Academy Umerkot, Pakistan",
+      location: "Umerkot, Sindh",
+      degree: "Higher Secondary Certificate(HSC) ",
+      field: "Pre-Engineering",
+      period: "06.2020 — 04.2022",
+      description: "Completed intermediate education with specialization in Pre-Engineering. Built a strong foundation in mathematics, physics, and chemistry.",
+      achievements: [
+        "A1-Grade Achievment"
+      ],
+      flag: false,
     }
   ],
   skills: {

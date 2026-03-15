@@ -44,7 +44,7 @@ export function Starfield() {
       colors[i * 3 + 2] = color.b;
 
       // Maintain very small sizes so they don't blow perfectly
-      sizes[i] = Math.random() * 1.0 + 0.2;
+      sizes[i] = Math.random() * 1.5 + 0.2;
 
       // Varying speeds for depth effect
       speeds[i] = Math.random() * 2 + 0.5;
