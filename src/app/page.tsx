@@ -9,12 +9,15 @@ import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { Education } from "@/components/sections/Education";
 import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
+import { Navbar } from "@/components/ui/Navbar";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   return (
     <main className="relative min-h-screen text-white selection:bg-electric-cyan selection:text-space-black z-10">
+      <Navbar />
       <AnimatePresence mode="wait">
         {loading && (
           <LoadingScreen
@@ -52,6 +55,8 @@ export default function Home() {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent"></div>
 
           <Contact />
+
+          <Footer />
         </div>
       )}
     </main>

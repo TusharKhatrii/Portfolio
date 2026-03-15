@@ -5,6 +5,15 @@ import { useState } from "react";
 import { resumeData } from "@/data/resume";
 import { Github, ExternalLink, ChevronsUpDown, ChevronsDownUp } from "lucide-react";
 
+interface Project {
+  title: string;
+  date: string;
+  techStack: string[];
+  description: string[];
+  githubLink?: string;
+  liveLink?: string;
+}
+
 export function Projects() {
 
   // All cards minimized by default
@@ -14,7 +23,7 @@ export function Projects() {
     setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const allProjects = [
+  const allProjects: Project[] = [
     {
       title: "Portfolio",
       date: "Mar 2026",

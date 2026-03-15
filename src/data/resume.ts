@@ -55,7 +55,7 @@ export const resumeData = {
   },
   projects: [
     {
-      title: "OrbitalEye -- Field Force Intelligence Dashboard",
+      title: "OrbitalEye",
       date: "Sep 2025 -- Present",
       techStack: ["React.js", "Supabase (PostgreSQL + PostGIS)", "Leaflet", "OpenStreetMap"],
       description: [
