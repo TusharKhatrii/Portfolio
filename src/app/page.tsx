@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { Hero } from "@/components/sections/Hero";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -19,10 +20,8 @@ export default function Home() {
       </AnimatePresence>
 
       {!loading && (
-        <div className="flex min-h-screen items-center justify-center">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-electric-cyan to-neon-purple mt-20">
-            Tushar Khatri
-          </h1>
+        <div className="w-full">
+          <Hero />
         </div>
       )}
     </main>
