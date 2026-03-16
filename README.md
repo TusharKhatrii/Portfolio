@@ -2,7 +2,7 @@
 
 A high-end, futuristic 3D portfolio website built with a sci-fi terminal aesthetic. Featuring interactive WebGL scenes, smooth scroll, a CLI-style About section, and a fully animated npm-install loading screen.
 
-🌐 **[Live Site](https://tusharkhatrii.github.io/Portfolio/)** — View the live portfolio
+🌐 **[Live Site](tusharkhatri.live)** — View the live portfolio
 ---
 
 ## ✨ Features
@@ -86,6 +86,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
+**Vibe coded with antigravity** ✨
+
 ## 📄 License
 
 MIT — feel free to use this as inspiration for your own portfolio.
@@ -93,3 +95,4 @@ MIT — feel free to use this as inspiration for your own portfolio.
 ---
 
 <p align="center">Built with ❤️ by <a href="https://github.com/TusharKhatrii">Tushar Khatri</a></p>
+
