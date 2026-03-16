@@ -2,7 +2,7 @@
 
 A high-end, futuristic 3D portfolio website built with a sci-fi terminal aesthetic. Featuring interactive WebGL scenes, smooth scroll, a CLI-style About section, and a fully animated npm-install loading screen.
 
-🌐 **[Live Site](tusharkhatri.live)** — View the live portfolio
+🌐 **[Live Site](https://www.tusharkhatri.live/)** — View the live portfolio
 ---
 
 ## ✨ Features
