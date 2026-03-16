@@ -32,6 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        {/* Favicon with data URI fallback */}
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23000' width='100' height='100'/><text x='50' y='70' font-size='80' fill='%2300ffff' text-anchor='middle' font-weight='bold'>T</text></svg>" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </head>
       <body
         className={`${inter.variable} ${geistMono.variable} antialiased bg-space-black text-white font-sans selection:bg-electric-cyan selection:text-space-black cursor-none`}
       >
