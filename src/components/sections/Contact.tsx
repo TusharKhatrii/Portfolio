@@ -108,51 +108,61 @@ export function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group flex items-center justify-between gap-4 p-5 rounded-xl border border-[#222] bg-[#0a0a0a]/70 backdrop-blur-sm hover:border-electric-cyan/40 transition-all duration-300"
+              className="group"
             >
-              <div className="flex items-center gap-4 min-w-0">
-                <div className={`flex items-center justify-center w-10 h-10 rounded-lg border shrink-0 ${item.iconBg} ${item.iconColor}`}>
-                  {item.icon}
-                </div>
-                <div className="flex flex-col min-w-0">
-                  <span className="text-gray-500 font-mono text-xs uppercase tracking-widest">{item.label}</span>
-                  <a
-                    href={item.href}
-                    target={item.copyable ? undefined : "_blank"}
-                    rel={item.copyable ? undefined : "noopener noreferrer"}
-                    className="text-white font-mono text-sm hover:text-electric-cyan transition-colors mt-0.5 truncate"
-                  >
-                    {item.value}
-                  </a>
-                </div>
-              </div>
-
               {item.copyable ? (
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    onClick={() => copyToClipboard(item.value, item.key)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#333] bg-[#141414] text-gray-500 hover:text-electric-cyan hover:border-electric-cyan/40 transition-all text-xs font-mono"
-                  >
-                    {copied === item.key ? (
-                      <><Check size={13} className="text-green-400" /> Copied</>
-                    ) : (
-                      <><Copy size={13} /> Copy</>
-                    )}
-                  </button>
-                  {(item as any).whatsappHref && (
-                    <a
-                      href={(item as any).whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Chat on WhatsApp"
-                      className="flex items-center justify-center w-8 h-8 rounded-lg border border-[#25D366]/30 bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 hover:border-[#25D366]/60 transition-all text-base"
+                <div className="flex items-center justify-between gap-4 p-5 rounded-xl border border-[#222] bg-[#0a0a0a]/70 backdrop-blur-sm hover:border-electric-cyan/40 transition-all duration-300">
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-lg border shrink-0 ${item.iconBg} ${item.iconColor}`}>
+                      {item.icon}
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-gray-500 font-mono text-xs uppercase tracking-widest">{item.label}</span>
+                      <span className="text-white font-mono text-sm mt-0.5 truncate">{item.value}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <button
+                      onClick={() => copyToClipboard(item.value, item.key)}
+                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#333] bg-[#141414] text-gray-500 hover:text-electric-cyan hover:border-electric-cyan/40 transition-all text-xs font-mono"
                     >
-                      <SiWhatsapp />
-                    </a>
-                  )}
+                      {copied === item.key ? (
+                        <><Check size={13} className="text-green-400" /> Copied</>
+                      ) : (
+                        <><Copy size={13} /> Copy</>
+                      )}
+                    </button>
+                    {(item as any).whatsappHref && (
+                      <a
+                        href={(item as any).whatsappHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat on WhatsApp"
+                        className="flex items-center justify-center w-8 h-8 rounded-lg border border-[#25D366]/30 bg-[#25D366]/10 text-[#25D366] hover:bg-[#25D366]/20 hover:border-[#25D366]/60 transition-all text-base"
+                      >
+                        <SiWhatsapp />
+                      </a>
+                    )}
+                  </div>
                 </div>
               ) : (
-                <ExternalLink size={15} className="text-gray-600 group-hover:text-electric-cyan transition-colors shrink-0" />
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between gap-4 p-5 rounded-xl border border-[#222] bg-[#0a0a0a]/70 backdrop-blur-sm hover:border-electric-cyan/40 transition-all duration-300 cursor-pointer block"
+                >
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className={`flex items-center justify-center w-10 h-10 rounded-lg border shrink-0 ${item.iconBg} ${item.iconColor}`}>
+                      {item.icon}
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-gray-500 font-mono text-xs uppercase tracking-widest">{item.label}</span>
+                      <span className="text-white font-mono text-sm hover:text-electric-cyan transition-colors mt-0.5 truncate">{item.value}</span>
+                    </div>
+                  </div>
+                  <ExternalLink size={15} className="text-gray-600 group-hover:text-electric-cyan transition-colors shrink-0" />
+                </a>
               )}
             </motion.div>
           ))}

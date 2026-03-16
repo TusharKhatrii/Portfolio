@@ -6,6 +6,7 @@ const nextConfig = {
   // assetPrefix: '/Portfolio/',
   // trailingSlash: true,
 
+  devIndicators: false,
   images: {
     unoptimized: true,  // Keep this if using next/image (required without server)
   },
