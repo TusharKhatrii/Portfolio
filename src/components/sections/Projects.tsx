@@ -34,7 +34,7 @@ export function Projects() {
         "Integrated a pure CLI-style interactive terminal for the 'About' section, demonstrating command-line proficiency.",
       ],
       githubLink: "https://github.com/TusharKhatrii/Portfolio",
-      liveLink: "tusharkhatri.live",
+      liveLink: "https://www.tusharkhatri.live",
     },
     ...resumeData.projects,
   ];

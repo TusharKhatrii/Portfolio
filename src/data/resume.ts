@@ -50,7 +50,7 @@ export const resumeData = {
     frameworks: ["Node.js", "Express.js", "Flutter"],
     databases: ["PostgreSQL (PostGIS)", "MySQL", "Supabase"],
     frontend: ["HTML5", "CSS3", "Bootstrap", "Handlebars (HBS)", "EJS"],
-    cloudAndDeployment: ["Vercel", "AWS (VPC, EC2, Load Balancer, Auto Scaling)"],
+    cloudAndDeployment: ["Vercel", "AWS (VPC, EC2, Load Balancer, Auto Scaling), Git/GitHub Actions (CI/CD)"],
     tools: ["Git/GitHub", "Postman", "VS Code"]
   },
   projects: [
@@ -70,9 +70,10 @@ export const resumeData = {
       date: "Mar 2025 – May 2025",
       techStack: ["NodeJS", "ExpressJS", "MySQL", "BcryptJS", "JsonWebToken", "Handlebars", "CSS"],
       description: [
-        "Designed a scalable e-commerce backend managing 100+ SKUs with real-time inventory sync via RESTful APIs.",
-        "Developed an admin dashboard for inventory control, product updates, and sales analytics.",
-        "Implemented JWT and BcryptJS authentication (10 salt rounds), cutting credential-related risks by 80%."
+        "Developed e-commerce backend with 100+ products and payment processing.",
+        "Implemented secure authentication with JWT and BcryptJS (10 salt rounds).",
+        " Built admin panel for inventory management and purchase tracking.",
+        "Used Handlebars for server-side rendering and UI integration."
       ]
     },
     {

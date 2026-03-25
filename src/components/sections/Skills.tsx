@@ -3,51 +3,63 @@
 import { motion } from "framer-motion";
 import { resumeData } from "@/data/resume";
 import { Terminal } from "lucide-react";
-
-import { 
-  SiCplusplus, 
-  SiJavascript, 
-  SiPython, 
-  SiDart, 
-  SiNodedotjs, 
-  SiExpress, 
-  SiFlutter,  
-  SiPostgresql, 
-  SiMysql, 
-  SiSupabase, 
-  SiHtml5, 
-  SiVercel, 
+import { IconType } from "react-icons";
+import {
+  SiCplusplus,
+  SiJavascript,
+  SiPython,
+  SiDart,
+  SiNodedotjs,
+  SiExpress,
+  SiFlutter,
+  SiPostgresql,
+  SiMysql,
+  SiSupabase,
+  SiHtml5,
+  SiVercel,
   SiTypescript,
-  SiGit, 
-  SiGithub, 
-  SiPostman
+  SiGithubactions,
+  SiGithub,
+  SiPostman,
 } from "react-icons/si";
 import { FaJava, FaAws, FaCss3Alt } from "react-icons/fa";
 import { VscCode } from "react-icons/vsc";
-import { IconType } from "react-icons";
 
 // Map skills to icons and URLs
-const getIconForSkill = (skill: string): { icon: IconType; color: string; url: string } | null => {
+const getIconForSkill = (skill: string): { icon: IconType; url: string; color: string } | null => {
   const s = skill.toLowerCase();
-  if (s.includes("c/c++") || s.includes("c++")) return { icon: SiCplusplus, color: "#00599C", url: "https://isocpp.org/" };
-  if (s.includes("typescript")) return { icon: SiTypescript, color: "#3178C6", url: "https://www.typescriptlang.org/" };
-  if (s.includes("javascript")) return { icon: SiJavascript, color: "#F7DF1E", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" };
-  if (s.includes("python")) return { icon: SiPython, color: "#3776AB", url: "https://www.python.org/" };
-  if (s.includes("dart")) return { icon: SiDart, color: "#0175C2", url: "https://dart.dev/" };
-  if (s.includes("java")) return { icon: FaJava, color: "#007396", url: "https://www.java.com/" };
-  if (s.includes("node")) return { icon: SiNodedotjs, color: "#339933", url: "https://nodejs.org/" };
-  if (s.includes("express")) return { icon: SiExpress, color: "#FFFFFF", url: "https://expressjs.com/" };
-  if (s.includes("flutter")) return { icon: SiFlutter, color: "#02569B", url: "https://flutter.dev/" };
-  if (s.includes("postgres")) return { icon: SiPostgresql, color: "#4169E1", url: "https://www.postgresql.org/" };
-  if (s.includes("mysql")) return { icon: SiMysql, color: "#4479A1", url: "https://www.mysql.com/" };
-  if (s.includes("supabase")) return { icon: SiSupabase, color: "#3ECF8E", url: "https://supabase.com/" };
-  if (s.includes("html")) return { icon: SiHtml5, color: "#E34F26", url: "https://developer.mozilla.org/en-US/docs/Web/HTML" };
-  if (s.includes("css")) return { icon: FaCss3Alt, color: "#1572B6", url: "https://developer.mozilla.org/en-US/docs/Web/CSS" };
-  if (s.includes("vercel")) return { icon: SiVercel, color: "#EAEAEA", url: "https://vercel.com/" };
-  if (s.includes("aws")) return { icon: FaAws, color: "#FF9900", url: "https://aws.amazon.com/" };
-  if (s.includes("git/github") || s.includes("github")) return { icon: SiGithub, color: "#FFFFFF", url: "https://github.com/" };
-  if (s.includes("postman")) return { icon: SiPostman, color: "#FF6C37", url: "https://www.postman.com/" };
-  if (s.includes("vs code")) return { icon: VscCode, color: "#007ACC", url: "https://code.visualstudio.com/" };
+  
+  const skillMap: Record<string, { icon: IconType; url: string; color: string }> = {
+    "github actions": { icon: SiGithubactions, url: "https://github.com/features/actions", color: "#2088FF" },
+    "c/c++": { icon: SiCplusplus, url: "https://isocpp.org/", color: "#00599C" },
+    "c++": { icon: SiCplusplus, url: "https://isocpp.org/", color: "#00599C" },
+    javascript: { icon: SiJavascript, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "#F7DF1E" },
+    typescript: { icon: SiTypescript, url: "https://www.typescriptlang.org/", color: "#3178C6" },
+    python: { icon: SiPython, url: "https://www.python.org/", color: "#3776AB" },
+    dart: { icon: SiDart, url: "https://dart.dev/", color: "#0175C2" },
+    java: { icon: FaJava, url: "https://www.java.com/", color: "#007396" },
+    node: { icon: SiNodedotjs, url: "https://nodejs.org/", color: "#339933" },
+    express: { icon: SiExpress, url: "https://expressjs.com/", color: "#FFFFFF" },
+    flutter: { icon: SiFlutter, url: "https://flutter.dev/", color: "#02569B" },
+    postgres: { icon: SiPostgresql, url: "https://www.postgresql.org/", color: "#336791" },
+    mysql: { icon: SiMysql, url: "https://www.mysql.com/", color: "#00758F" },
+    supabase: { icon: SiSupabase, url: "https://supabase.com/", color: "#3ECF8E" },
+    html: { icon: SiHtml5, url: "https://developer.mozilla.org/en-US/docs/Web/HTML", color: "#E34C26" },
+    css: { icon: FaCss3Alt, url: "https://developer.mozilla.org/en-US/docs/Web/CSS", color: "#1572B6" },
+    vercel: { icon: SiVercel, url: "https://vercel.com/", color: "#FFFFFF" },
+    aws: { icon: FaAws, url: "https://aws.amazon.com/", color: "#FF9900" },
+    github: { icon: SiGithub, url: "https://github.com/", color: "#FFFFFF" },
+    postman: { icon: SiPostman, url: "https://www.postman.com/", color: "#FF6C37" },
+    "vs code": { icon: VscCode, url: "https://code.visualstudio.com/", color: "#007ACC" },
+  };
+
+  // Check longer/more specific keys first to prioritize exact matches
+  const sortedKeys = Object.keys(skillMap).sort((a, b) => b.length - a.length);
+  
+  for (const key of sortedKeys) {
+    if (s.includes(key)) return skillMap[key];
+  }
+  
   return null;
 };
 
@@ -57,9 +69,9 @@ const allSkills = [
   ...resumeData.skills.frameworks,
   ...resumeData.skills.databases,
   ...resumeData.skills.frontend,
-  ...resumeData.skills.cloudAndDeployment,
+  ...resumeData.skills.cloudAndDeployment.flatMap(skill => skill.split(/,|\//).map(s => s.trim())),
   ...resumeData.skills.tools,
-].filter((skill) => getIconForSkill(skill) !== null);
+].filter((skill) => skill && getIconForSkill(skill) !== null);
 
 export function Skills() {
   return (
@@ -93,7 +105,7 @@ export function Skills() {
           {allSkills.map((skill, index) => {
             const skillData = getIconForSkill(skill);
             if (!skillData) return null;
-            const { icon: Icon, color, url } = skillData;
+            const { icon: Icon, url, color } = skillData;
             
             return (
               <motion.a
@@ -112,7 +124,7 @@ export function Skills() {
                   stiffness: 200 
                 }}
               >
-                <Icon color={color} />
+                <Icon style={{ color }} />
                 
                 {/* Minimal tooltip on hover */}
                 <span className="absolute -bottom-8 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-mono text-white bg-black/80 px-2 py-1 rounded whitespace-nowrap pointer-events-none border border-[#333]">
